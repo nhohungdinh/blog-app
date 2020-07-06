@@ -91,6 +91,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
 
         updateNavHeader();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
     }
 
     private void setupPopupImageClick() {
@@ -203,7 +204,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                                             imageDownLoadLink, currentUser.getUid(),currentUser.getPhotoUrl().toString());
 
                                     // add post vào firebase database
-
+                                    //System.out.println(pickedImgUri.getLastPathSegment());
                                     addPost(post);
 
 
